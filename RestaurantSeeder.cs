@@ -13,7 +13,7 @@ namespace _ApiProject1_
         {
             if (_dbContext.Database.CanConnect())
             {
-                var pendingMigrations = _dbContext.Database.GetPendingMigrations();
+                var pendingMigrations = _dbContext.Database.GetPendingMigrations()
                 if(pendingMigrations != null && pendingMigrations.Any())
                 {
                     _dbContext.Database.Migrate();

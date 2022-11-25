@@ -16,7 +16,7 @@ namespace _ApiProject1_
                 var pendingMigrations = _dbContext.Database.GetPendingMigrations()
                 if(pendingMigrations != null && pendingMigrations.Any())
                 {
-                    _dbContext.Database.Migrate();
+                    _dbContext.Database.Migrate()
                 }
                 if (!_dbContext.Restaurants.Any())
                 {

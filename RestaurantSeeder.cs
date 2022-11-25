@@ -13,15 +13,15 @@ namespace _ApiProject1_
         {
             if (_dbContext.Database.CanConnect())
             {
-                var pendingMigrations = _dbContext.Database.GetPendingMigrations()
+                var pendingMigrations = _dbContext.Database.GetPendingMigrations();
                 if(pendingMigrations != null && pendingMigrations.Any())
                 {
                     _dbContext.Database.Migrate();
                 }
                 if (!_dbContext.Restaurants.Any())
                 {
-                    var restaurants = GetRestaurants()
-                    _dbContext.Restaurants.AddRange(restaurants)
+                    var restaurants = GetRestaurants();
+                    _dbContext.Restaurants.AddRange(restaurants);
                     _dbContext.SaveChanges();
                 }
                 if (!_dbContext.Roles.Any())
